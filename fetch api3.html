@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <div id="header">
+
+    </div>
+    
+        <div class="container-fluid">
+            <div class="row" id="product">
+
+    </div>
+
+</div>
+<script type="module">
+    import{header} from './import.js'
+    document.getElementById("header").innerHTML=header
+</script>
+<script>
+    var html=""
+    fetch("mobile.json")
+    .then(data=>data.json())
+    .then(data=>{
+        for(var i in data){
+            html+=`
+            <div class="card" style="width: 18rem;">
+<img src="${data[i].img}" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">${data[i].name}</h5>
+<p class="card-text">${data[i].price}</p>
+<a href="#" class="btn btn-primary">BUY NOW</a>
+</div>
+</div>
+
+            
+            
+            
+            
+            
+            
+            `
+         
+        }
+        document.getElementById("product").innerHTML=html 
+    })
+</script>
+<div id="footer">
+
+
+</div>
+    <script type="module">
+        import{footer} from './import.js'
+        document.getElementById("footer").innerHTML=footer
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
