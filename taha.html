@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+           
+    <div class="container-fluid text-center">
+        <div class="row mt-3"></div>
+            <div class="col-6" >
+                <div class="row mt-3"></div>
+                <h1>REGISTRATION FORM:-</h1>
+            <label for="" style="font-size: 30px;">PASSWORD:-</label>
+            <input type="password" class="form-control" id="a">
+            <label for="" id="e"></label>
+            <br><br>            
+            <label for="" style="font-size: 30px;">CONFIRM PASSWORD:-</label>
+            <input type="password" class="form-control" id="b">
+
+
+            <br><br>
+            <button class="btn btn-info" >SUBMIT</button>
+            <label for="" id="c"></label >
+        </div>
+    </div>          
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#b").keyup(function(){
+            var pass=$("#a").val()
+            var c_pass=$("#b").val()
+
+            if(pass==c_pass){
+                $("#c").html ("password match")
+                $("#c").css ("color", "green")
+
+            }
+            else{
+                $("#c").html ("password not match")
+                $("#c").css ("color", "red")
+
+            }
+
+        })
+        $("#a").keyup(function(){
+        var d=$("#a").val().length
+        if(d>8){
+            $("#e").html ("STRONG")
+            $("#e").css ("color", "green")
+        }
+        else if(d>5){
+            $("#e").html ("MEDIUM")
+            $("#e").css ("color", "red")
+        }
+        else if(d>2){
+            $("#e").html ("WEAK")
+            $("#e").css ("color", "purple")
+        }
+        else{
+            $("#e").html ("VERY WEAK")
+            $("#e").css ("color", "gray")
+        }
+    })
+        
+    
+    })
+   
+</script>          
+
+
+            
+
+        
+
+    
+    <!-- <p>NAME:-</p>
+    <input type="text" name="" id="a">
+    <button id="btn" class="btn btn-success">SUBMIT</button>
+    <ol id="b">
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                var data=$("#a").val()
+                $("#b").append("<li>"+data+"</li")
+            })
+        })
+    </script>    
+
+    </ol>
+</div>
+</div>
+</div> -->
+</body>
+</html>
